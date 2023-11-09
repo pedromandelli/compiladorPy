@@ -2,53 +2,30 @@ from lexer import Lexer
 
 
 def main():
-    content = """
-    {
-{
-  float x;
-  float z;
-  int i;
-  int max;
-  x = 0;
-  max = 10000;
-  for (i = 1; i <= max; i = i + 1){
-    print x;
-    x = x + 0.001;
-    z = x;
-    if (z != x){
-      print "Erro numérico na atribuição de números na notação ponto flutuante!";
-      break;
-    }
-  }
-}
+    # Caminho para o diretório onde os arquivos TXT estão armazenados
+    diretorio = 'examples/'
 
+    # Nome do arquivo que você quer ler (exemplo: 'arquivo.txt')
+    nome_do_arquivo = 'exemplo1.txt'
 
-{
-  int y;
-  int j;
-  int i;
-  y = new int[10];
-  j = 0;
-  for (i = 0; i < 20; i = i + 1) 
-    if (i % 2 == 0){
-      y[j] = i + 1;
-      j = j + 1;
-    }
-    else
-      print 0;
+    # Caminho completo para o arquivo
+    caminho_completo = diretorio + nome_do_arquivo
 
-  for (i = 0; i < 10; i = i + 1)
-    print y[i];
+    # Abrir o arquivo para leitura
+    with open(caminho_completo, 'r') as arquivo:
+        conteudo = arquivo.read()
 
-  return;
-}
-}
-    """
+    content = conteudo
     lexer = Lexer(content)
     token = lexer.get_next_token()
-    while token.type != 'EOF':
+    while token.type != 'EOF':  # Supondo que você tenha um token de fim de arquivo
         print(token)
         token = lexer.get_next_token()
+
+    # Agora, depois de tokenizar o conteúdo, vamos imprimir a tabela de símbolos
+    print("Tabela de Símbolos:")
+    print(lexer.symbol_table)
+
 
 if __name__ == "__main__":
     main()
