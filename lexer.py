@@ -31,9 +31,17 @@ class Lexer:
         self.input = input
         self.position = 0
         self.current_char = self.input[self.position] if self.position < len(self.input) else None
+        self.current_line = 1
+        self.current_column = 1
+        self.symbol_table = SymbolTable()
 
     def advance(self):
         """ Avança para o próximo caracter. """
+        if self.current_char == '\n':
+            self.current_line += 1
+            self.current_column = 0
+        else:
+            self.current_column += 1
         self.position += 1
         self.current_char = self.input[self.position] if self.position < len(self.input) else None
 
@@ -171,11 +179,15 @@ class Lexer:
     def identifier(self):
         """ Retorna um token de identificador ou palavra-chave reservada. """
         result = ''
+        start_column = self.current_column
         while self.current_char is not None and (self.current_char.isalnum() or self.current_char == '_'):
             result += self.current_char
             self.advance()
 
-        return Token(self.RESERVED_KEYWORDS.get(result, 'IDENT'), result)
+        # Se for um identificador, atualizamos a tabela de símbolos
+        token_type = self.RESERVED_KEYWORDS.get(result, 'IDENT')
+        self.symbol_table.insert(token_type, self.current_line, start_column)
+        return Token(token_type, result)
 
     # considera string_constant o que está escrito entre aspas dupla
     def string_constant(self):
@@ -192,3 +204,16 @@ class Lexer:
 
         self.advance()  # Pula a última aspa
         return Token('STRING_CONSTANT', result)
+
+
+class SymbolTable:
+    def __init__(self):
+        self.symbols = {}
+
+    def insert(self, identifier, line, column):
+        if identifier not in self.symbols:
+            self.symbols[identifier] = []
+        self.symbols[identifier].append((line, column))
+
+    def __str__(self):
+        return str(self.symbols)
