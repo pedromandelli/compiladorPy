@@ -1,4 +1,6 @@
 from lexer import Lexer
+from syntax import SyntaxAnalyzer
+from syntax_table import ANALISADOR_SINTATICO_TABELA
 
 
 def main():
@@ -17,12 +19,19 @@ def main():
 
     content = conteudo
     lexer = Lexer(content)
-    token = lexer.get_next_token()
-    while token.type != 'EOF':  # Supondo que você tenha um token de fim de arquivo
-        print(token)
-        token = lexer.get_next_token()
+    # token = lexer.get_next_token()
+    # while token.type != 'EOF':  # Supondo que você tenha um token de fim de arquivo
+    #     print(token)
+    #     token = lexer.get_next_token()
+    #
+    #
 
-    # Agora, depois de tokenizar o conteúdo, vamos imprimir a tabela de símbolos
+    # Cria o analisador sintático e inicia a análise
+    analyzer = SyntaxAnalyzer(lexer, ANALISADOR_SINTATICO_TABELA)
+    result = analyzer.analyze()
+    print("Análise Sintática Bem-Sucedida!" if result else "Análise Sintática Falhou")
+
+    # Imprime a tabela de símbolos
     print("Tabela de Símbolos:")
     print(lexer.symbol_table)
 
