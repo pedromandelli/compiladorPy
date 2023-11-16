@@ -8,7 +8,7 @@ def main():
     diretorio = 'examples/'
 
     # Nome do arquivo que você quer ler (exemplo: 'arquivo.txt')
-    nome_do_arquivo = 'exemplo1.txt'
+    nome_do_arquivo = 'teste.txt'
 
     # Caminho completo para o arquivo
     caminho_completo = diretorio + nome_do_arquivo
@@ -19,21 +19,21 @@ def main():
 
     content = conteudo
     lexer = Lexer(content)
-    # token = lexer.get_next_token()
-    # while token.type != 'EOF':  # Supondo que você tenha um token de fim de arquivo
-    #     print(token)
-    #     token = lexer.get_next_token()
-    #
-    #
+    """token = lexer.get_next_token()
+    while token.type != 'EOF':  # Supondo que você tenha um token de fim de arquivo
+        print(token)
+        token = lexer.get_next_token()"""
+
+    lexer.reset()
 
     # Cria o analisador sintático e inicia a análise
     analyzer = SyntaxAnalyzer(lexer, ANALISADOR_SINTATICO_TABELA)
     result = analyzer.analyze()
     print("Análise Sintática Bem-Sucedida!" if result else "Análise Sintática Falhou")
 
-    # Imprime a tabela de símbolos
-    print("Tabela de Símbolos:")
-    print(lexer.symbol_table)
+    # # Imprime a tabela de símbolos
+    # print("Tabela de Símbolos:")
+    # print(lexer.symbol_table)
 
 
 if __name__ == "__main__":

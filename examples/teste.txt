@@ -1,1 +1,57 @@
-{
+def calculate(int num1, int num2) {
+    int sum;
+    int product;
+    sum = num1 + num2;
+    product = num1 * num2;
+    print sum;
+    print product;
+}
+
+def displayEvenNumbers(int limit) {
+    int i;
+    for (i = 0; i <= limit; i = i + 1) {
+        if (i % 2 == 0) {
+            print i;
+        }
+    }
+}
+
+def displayOddNumbers(int limit) {
+    int i;
+    for (i = 1; i <= limit; i = i + 1) {
+        if (i % 2 != 0) {
+            print i;
+        }
+    }
+}
+
+def factorial(int num) {
+    if (num == 0) {
+        return;
+    }
+    int result;
+    result = 1;
+    int i;
+    for (i = 1; i <= num; i = i + 1) {
+        result = result * i;
+    }
+    return;
+}
+
+def main() {
+    int i;
+    int n;
+    int teste;
+    n = 10;
+
+    for (i = 0; i <= n; i = i + 1) {
+        if (i % 2 == 0) {
+            print i;
+            calculate(i, n) = teste;
+            if (i % 4 == 0) {
+                displayEvenNumbers(i) = teste;
+            }
+        }
+    }
+    return;
+}
