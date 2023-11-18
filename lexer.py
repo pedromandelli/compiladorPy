@@ -35,6 +35,14 @@ class Lexer:
         self.current_column = 1
         self.symbol_table = SymbolTable()
 
+
+    def reset(self):
+        self.position = 0
+        self.current_char = self.input[self.position] if self.position < len(self.input) else None
+        self.current_line = 1
+        self.current_column = 1
+
+
     def advance(self):
         """ Avança para o próximo caracter. """
         if self.current_char == '\n':
