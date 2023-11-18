@@ -32,7 +32,7 @@ class Lexer:
         self.position = 0
         self.current_char = self.input[self.position] if self.position < len(self.input) else None
         self.current_line = 1
-        self.current_column = 1
+        self.current_column = 0
         self.symbol_table = SymbolTable()
 
 
@@ -154,11 +154,6 @@ class Lexer:
             if self.current_char.isalpha() or self.current_char == '_':
                 return self.identifier()
 
-            # Se não for um espaço, letra ou sublinhado, classificamos como OUTRO
-            result = self.current_char
-            self.advance()
-            return Token('OUTRO', result)
-
         return Token('EOF', None)
 
     def number(self):
@@ -224,4 +219,6 @@ class SymbolTable:
         self.symbols[identifier].append((line, column))
 
     def __str__(self):
-        return str(self.symbols)
+        for i in self.symbols:
+            print(f'{i}: {self.symbols[i]}')
+        return str()
