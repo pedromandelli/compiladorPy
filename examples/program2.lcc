@@ -1,0 +1,101 @@
+def add ( int num1 , int num2 )
+{
+    int SUM;
+    SUM = num1 + num2;
+    return ;
+}
+
+def subtract ( int num3 , int num4 )
+{
+    int DIFF;
+    DIFF = num3 - num4;
+    return ;
+}
+
+def multiply ( int num5 , int num6 )
+{
+    int PROD;
+    PROD = num5 * num6;
+    return ;
+}
+
+def divide ( int num7 , int num8 )
+{
+    int QUO;
+    QUO = num7 / num8;
+    return ;
+}
+
+def modulo ( int num9 , int num10 )
+{
+    int MOD;
+    MOD = num9 % num10;
+    return ;
+}
+
+def compare ( int num11 , int num12 )
+{
+    if ( num11 == num12 )
+    {
+        return ;
+    }
+    else
+    {
+        return ;
+    }
+}
+
+def main ()
+{
+    int mainNum1;
+    int mainNum2;
+    int resultAdd;
+    int resultSubtract;
+    int resultMultiply;
+    int resultDivide;
+    int resultModulo;
+    int resultCompare;
+    int tempNum1;
+    int tempNum2;
+    int tempResult;
+    mainNum1 = 4;
+    mainNum2 = 5;
+    resultAdd = mainNum1 + mainNum2;
+    resultSubtract = mainNum1 - mainNum2;
+    resultMultiply = mainNum1 * mainNum2;
+    resultDivide = mainNum1 / mainNum2;
+    resultModulo = mainNum1 % mainNum2;
+    resultCompare = mainNum1 == mainNum2;
+    tempNum1 = 3;
+    tempNum2 = 2;
+    tempResult = tempNum1 + tempNum2;
+    return ;
+}
+
+def secondary ()
+{
+    int secondaryNum1;
+    int secondaryNum2;
+    int resultSecondaryAdd;
+    int tempSecondaryNum;
+    int resultSecondarySubtract;
+    secondaryNum1 = 7;
+    secondaryNum2 = 8;
+    resultSecondaryAdd = secondaryNum1 + secondaryNum2;
+    tempSecondaryNum = 9;
+    resultSecondarySubtract = secondaryNum1 + tempSecondaryNum;
+    return ;
+}
+
+def tertiary ()
+{
+    int tertiaryNum1;
+    int tertiaryNum2;
+    int resultTertiaryMultiply;
+    int resultTertiaryDivide;
+    tertiaryNum1 = 10;
+    tertiaryNum2 = 11;
+    resultTertiaryMultiply = tertiaryNum1 * tertiaryNum2;
+    resultTertiaryDivide = tertiaryNum1 * tertiaryNum2;
+    return ;
+}

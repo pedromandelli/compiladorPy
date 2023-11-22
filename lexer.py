@@ -32,7 +32,7 @@ class Lexer:
         self.position = 0
         self.current_char = self.input[self.position] if self.position < len(self.input) else None
         self.current_line = 1
-        self.current_column = 0
+        self.current_column = 1
         self.symbol_table = SymbolTable()
 
 
@@ -47,7 +47,7 @@ class Lexer:
         """ Avança para o próximo caracter. """
         if self.current_char == '\n':
             self.current_line += 1
-            self.current_column = 0
+            self.current_column = 1
         else:
             self.current_column += 1
         self.position += 1
@@ -153,6 +153,9 @@ class Lexer:
 
             if self.current_char.isalpha() or self.current_char == '_':
                 return self.identifier()
+
+            else:
+                raise Exception(f'Erro léxico no caracter: "{self.current_char}", Linha {self.current_line}, Coluna: {self.current_column}')
 
         return Token('EOF', None)
 
