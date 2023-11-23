@@ -3,7 +3,7 @@
 ## INE5622 - Introdução a Compiladores
 
 ### Descrição
-O projeto consiste em desenvolver um analisador léxico e sintático para uma linguagem de programação simplificada. O analisador léxico identifica e classifica os tokens presentes no código fonte, o analisador sintático faz a análise da estrutura gramatical do programa, verificando se está de acordo com as regras definidas na gramática da linguagem. Integrantes: Pedro Balconi Mandelli e Vinicius Alves
+O projeto consiste em desenvolver um analisador léxico e sintático para uma linguagem de programação simplificada. O analisador léxico identifica e classifica os tokens presentes no código fonte, o analisador sintático faz a análise da estrutura gramatical do programa, verificando se está de acordo com as regras definidas na gramática da linguagem.
 
 ### Execução do projeto
 1 - Clone o projeto na sua máquina local \
