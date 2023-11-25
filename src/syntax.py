@@ -13,7 +13,7 @@ class SyntaxAnalyzer:
         sentence_form = ""
         while True:
             # Verifica o estado da pilha
-            print(f"Pilha: {self.stack}")
+            # print(f"Pilha: {self.stack}")
 
             # Desempilha o elemento do topo
             top = self.stack.pop()

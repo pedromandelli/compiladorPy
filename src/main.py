@@ -8,7 +8,7 @@ def main():
     diretorio = 'examples/'
 
     # Captura o nome do arquivo da linha de comando ou usa um padrão
-    nome_do_arquivo = sys.argv[1] if len(sys.argv) > 1 else 'program1.lcc'
+    nome_do_arquivo = sys.argv[1] if len(sys.argv) > 1 else 'entrada.lcc'
 
     # Caminho completo para o arquivo
     caminho_completo = diretorio + nome_do_arquivo
