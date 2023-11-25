@@ -54,4 +54,13 @@ def main() {
         }
     }
     return;
+
+    intDeclarationWithSubtraction = (10 - 10);
+    intDeclarationWithMultipleSummation = 10 + 10 + 10 - 10;
+
+    intDeclarationWithMultiplication = 10 * 10;
+    intDeclarationWithDivision = 10 / 10;
+
+    intDeclarationWithPrecedence = (5 + 10) + 5 / ((10 - 5) * 10);
+
 }

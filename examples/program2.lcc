@@ -1,47 +1,47 @@
-def add ( int num1 , int num2 )
+def add(int num1, int num2)
 {
     int SUM;
     SUM = num1 + num2;
     return ;
 }
 
-def subtract ( int num3 , int num4 )
+def subtract(int num3,int num4)
 {
     int DIFF;
     DIFF = num3 - num4;
     return ;
 }
 
-def multiply ( int num5 , int num6 )
+def multiply(int num5, int num6)
 {
     int PROD;
     PROD = num5 * num6;
     return ;
 }
 
-def divide ( int num7 , int num8 )
+def divide(int num7, int num8)
 {
     int QUO;
     QUO = num7 / num8;
     return ;
 }
 
-def modulo ( int num9 , int num10 )
+def modulo(int num9, int num10)
 {
     int MOD;
     MOD = num9 % num10;
     return ;
 }
 
-def compare ( int num11 , int num12 )
+def compare(int num11, int num12)
 {
-    if ( num11 == num12 )
+    if(num11 == num12)
     {
-        return ;
+        return;
     }
     else
     {
-        return ;
+        return;
     }
 }
 
@@ -69,7 +69,7 @@ def main ()
     tempNum1 = 3;
     tempNum2 = 2;
     tempResult = tempNum1 + tempNum2;
-    return ;
+    return;
 }
 
 def secondary ()
@@ -84,7 +84,7 @@ def secondary ()
     resultSecondaryAdd = secondaryNum1 + secondaryNum2;
     tempSecondaryNum = 9;
     resultSecondarySubtract = secondaryNum1 + tempSecondaryNum;
-    return ;
+    return;
 }
 
 def tertiary ()

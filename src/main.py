@@ -1,14 +1,14 @@
 import sys
 from lexer import Lexer
 from syntax import SyntaxAnalyzer
-from syntax_table import ANALISADOR_SINTATICO_TABELA
+from syntax_table import SYNTAX_TABLE
 
 def main():
-    # Caminho para o diretório onde os arquivos TXT estão armazenados
+    # Caminho para o diretório onde as entradas estão
     diretorio = 'examples/'
 
     # Captura o nome do arquivo da linha de comando ou usa um padrão
-    nome_do_arquivo = sys.argv[1] if len(sys.argv) > 1 else 'entrada.lcc'
+    nome_do_arquivo = sys.argv[1] if len(sys.argv) > 1 else 'program1.lcc'
 
     # Caminho completo para o arquivo
     caminho_completo = diretorio + nome_do_arquivo
@@ -21,13 +21,16 @@ def main():
         print(f"Erro: O arquivo '{caminho_completo}' não foi encontrado.")
         return  # Encerra a execução da função main
 
-    content = conteudo
-    lexer = Lexer(content)
+    # Analisador léxico recebe a entrada
+    lexer = Lexer(conteudo)
 
     # Cria o analisador sintático e inicia a análise
-    analyzer = SyntaxAnalyzer(lexer, ANALISADOR_SINTATICO_TABELA)
+    analyzer = SyntaxAnalyzer(lexer, SYNTAX_TABLE)
     result = analyzer.analyze()
-    print(f"Análise Sintática do arquivo '{nome_do_arquivo}' Bem-Sucedida!" if result else f"Análise Sintática do arquivo '{nome_do_arquivo}' Falhou")
+    if result:
+        print(f"O arquivo '{nome_do_arquivo}' Passou na análise sintática ")
+    else:
+        print(f"O arquivo '{nome_do_arquivo}' Falhou na análise sintática")
 
 if __name__ == "__main__":
     main()

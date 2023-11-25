@@ -1,3 +1,5 @@
+
+
 class Token:
     def __init__(self, type_, value):
         self.type = type_
@@ -10,21 +12,18 @@ class Token:
 class Lexer:
     RESERVED_KEYWORDS = {
         'def': 'DEF',
-        'void': 'VOID',
         'int': 'INT',
         'float': 'FLOAT',
         'str': 'STR',
         'return': 'RETURN',
         'if': 'IF',
         'else': 'ELSE',
-        'while': 'WHILE',
         'for': 'FOR',
         'print': 'PRINT',
         'read': 'READ',
         'new': 'NEW',
         'break': 'BREAK',
         'null': 'NULL',
-        'exec': 'EXEC'
     }
 
     def __init__(self, input):
@@ -96,13 +95,14 @@ class Lexer:
                 return Token('MENOR', '<')
 
             if self.current_char == '!':
+                char = self.current_char
+                char_column = self.current_column
                 self.advance()
                 if self.current_char == '=':
                     self.advance()
                     return Token('DIFERENTE', '!=')
                 else:
-                    raise Exception('Erro léxico')
-                # Tratar um '!' solitário como um erro
+                    raise Exception(f'Erro léxico no caracter: "{char}", Linha {self.current_line}, Coluna: {char_column}')
 
             if self.current_char == '=':
                 self.advance()
@@ -155,7 +155,7 @@ class Lexer:
                 return self.identifier()
 
             else:
-                raise Exception(f'Erro léxico no caracter: "{self.current_char}", Linha {self.current_line}, Coluna: {self.current_column}')
+                return None
 
         return Token('EOF', None)
 
@@ -175,7 +175,7 @@ class Lexer:
                     self.advance()
                 return Token('FLOAT_CONSTANT', float(result))
             else:
-                # Retrocedendo para tratar o ponto separadamente
+                # Retrocede para tratar o ponto separadamente
                 self.position -= 1
                 self.current_char = '.'
                 return Token('INT_CONSTANT', int(result))
@@ -190,7 +190,7 @@ class Lexer:
             result += self.current_char
             self.advance()
 
-        # Se for um identificador, atualizamos a tabela de símbolos
+        # Atualiza a tabela de símbolos
         token_type = self.RESERVED_KEYWORDS.get(result, 'IDENT')
         self.symbol_table.insert(token_type, self.current_line, start_column)
         return Token(token_type, result)
