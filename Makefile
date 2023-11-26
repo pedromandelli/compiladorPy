@@ -2,7 +2,7 @@ VENV = venv
 PYTHON = $(VENV)/bin/python3
 
 run: $(VENV)/bin/activate
-	$(PYTHON) main.py $(FILE)
+	$(PYTHON) src/main.py $(FILE)
 
 $(VENV)/bin/activate:
 	python3 -m venv $(VENV)

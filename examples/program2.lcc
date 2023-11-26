@@ -1,101 +1,107 @@
-def add ( int num1 , int num2 )
-{
-    int SUM;
-    SUM = num1 + num2;
-    return ;
-}
+def main() {
+    int i;
+    int j;
+    int k;
+    int count;
+    float average;
+    str message;
 
-def subtract ( int num3 , int num4 )
-{
-    int DIFF;
-    DIFF = num3 - num4;
-    return ;
-}
+    i = 0;
+    j = 0;
+    k = 0;
+    count = 10;
+    average = 0.0;
+    message = "Calculando...";
 
-def multiply ( int num5 , int num6 )
-{
-    int PROD;
-    PROD = num5 * num6;
-    return ;
-}
+    for (i = 0; i < count; i = i + 1) {
+        print "Loop externo";
+        print i;
 
-def divide ( int num7 , int num8 )
-{
-    int QUO;
-    QUO = num7 / num8;
-    return ;
-}
+        for (j = 0; j < count; j = j + 1) {
+            print "Loop interno";
+            print j;
+            average = average + j;
 
-def modulo ( int num9 , int num10 )
-{
-    int MOD;
-    MOD = num9 % num10;
-    return ;
-}
+            for (k = 0; k < count; k = k + 1) {
+                print "Loop mais interno";
+                print k;
+            }
+        }
 
-def compare ( int num11 , int num12 )
-{
-    if ( num11 == num12 )
-    {
-        return ;
+        if (i % 2 == 0) {
+            print "Número par encontrado:";
+            print i;
+        } else {
+            print "Número ímpar encontrado:";
+            print i;
+        }
     }
-    else
-    {
-        return ;
+
+    average = average / (count * count);
+
+    print "Média:";
+    print average;
+    print message;
+
+    print "Programa finalizado.";
+    return;
+}
+
+def extraCalculations(int n) {
+    int i;
+    for (i = 0; i < n; i = i + 1) {
+        print "Contando em extraCalculations";
+        print i;
     }
+    return;
 }
 
-def main ()
-{
-    int mainNum1;
-    int mainNum2;
-    int resultAdd;
-    int resultSubtract;
-    int resultMultiply;
-    int resultDivide;
-    int resultModulo;
-    int resultCompare;
-    int tempNum1;
-    int tempNum2;
-    int tempResult;
-    mainNum1 = 4;
-    mainNum2 = 5;
-    resultAdd = mainNum1 + mainNum2;
-    resultSubtract = mainNum1 - mainNum2;
-    resultMultiply = mainNum1 * mainNum2;
-    resultDivide = mainNum1 / mainNum2;
-    resultModulo = mainNum1 % mainNum2;
-    resultCompare = mainNum1 == mainNum2;
-    tempNum1 = 3;
-    tempNum2 = 2;
-    tempResult = tempNum1 + tempNum2;
-    return ;
+def testFunction1() {
+    print "Dentro de testFunction1";
+    return;
 }
 
-def secondary ()
-{
-    int secondaryNum1;
-    int secondaryNum2;
-    int resultSecondaryAdd;
-    int tempSecondaryNum;
-    int resultSecondarySubtract;
-    secondaryNum1 = 7;
-    secondaryNum2 = 8;
-    resultSecondaryAdd = secondaryNum1 + secondaryNum2;
-    tempSecondaryNum = 9;
-    resultSecondarySubtract = secondaryNum1 + tempSecondaryNum;
-    return ;
+def testFunction2(int param) {
+    print "Dentro de testFunction2 com parâmetro";
+    print param;
+    return;
 }
 
-def tertiary ()
-{
-    int tertiaryNum1;
-    int tertiaryNum2;
-    int resultTertiaryMultiply;
-    int resultTertiaryDivide;
-    tertiaryNum1 = 10;
-    tertiaryNum2 = 11;
-    resultTertiaryMultiply = tertiaryNum1 * tertiaryNum2;
-    resultTertiaryDivide = tertiaryNum1 * tertiaryNum2;
-    return ;
+def additionalFunction() {
+    int i;
+    for (i = 0; i < 5; i = i + 1) {
+        print "Iteração em additionalFunction";
+        print i;
+    }
+    return;
+}
+
+def complexCalculation(int a, int b) {
+    int result;
+    result = 0;
+    for (i = 0; i < a; i = i + 1) {
+        for (j = 0; j < b; j = j + 1) {
+            result = result + i * j;
+        }
+    }
+    return;
+}
+
+def printNumbers(int limit) {
+    for (i = 0; i < limit; i = i + 1) {
+        print "Número:";
+        print i;
+    }
+    return;
+}
+
+def checkEvenOdd(int num) {
+    if (num % 2 == 0) {
+        print "Par:";
+        print num;
+    } else {
+        print "Ímpar:";
+        print num;
+    }
+    return;
 }

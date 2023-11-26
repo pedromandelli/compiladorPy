@@ -1,118 +1,123 @@
-def multiplyAndAdd ( int num1 , int num2 , int num3 )
-{
-    int RESULT [2];
-    RESULT [0] = num1 * num2;
-    RESULT [1] = RESULT [0] + num3;
+def main() {
+    int num1;
+    int num2;
+    int sum;
+    int product;
+    int difference;
+    int quotient;
+    int modulus;
+    str welcomeMessage;
+    str operationMessage;
+
+    num1 = 10;
+    num2 = 20;
+    welcomeMessage = "Bem-vindo ao programa de cálculos";
+    operationMessage = "Operação realizada com sucesso.";
+
+    print welcomeMessage;
+
+    sum = addNumbers(num1, num2);
+    print "A soma é:";
+    print sum;
+    print operationMessage;
+
+    product = multiplyNumbers(num1, num2);
+    print "O produto é:";
+    print product;
+    print operationMessage;
+
+    difference = subtractNumbers(num1, num2);
+    print "A diferença é:";
+    print difference;
+    print operationMessage;
+
+    quotient = divideNumbers(num1, num2);
+    print "O quociente é:";
+    print quotient;
+    print operationMessage;
+
+    modulus = modulusNumbers(num1, num2);
+    print "O módulo é:";
+    print modulus;
+    print operationMessage;
+
+    result = compareNumbers(num1, num2);
+
+    print "Fim do programa.";
     return;
 }
 
-def divideAndSubtract ( int num4 , int num5 , int num6 )
-{
-    int RESULT [2];
-    RESULT [0] = num4 / num5;
-    RESULT [1] = RESULT [0] - num6;
-    return;
-}
-
-def incrementAndMultiply ( int num7 , int num8 )
-{
-    int RESULT [2];
-    num7 = num7 + 1;
-    RESULT [0] = num7 * num8;
-    RESULT [1] = num8;
-    return;
-}
-
-def decrementAndDivide ( int num9 , int num10 )
-{
-    int RESULT [2];
-    num9 = num9 - 1;
-    RESULT [0] = num9 / num10;
-    RESULT [1] = num10;
-    return;
-}
-
-def modAndAdd ( int num11 , int num12 )
-{
-    int RESULT [2];
-    RESULT [0] = num11 % num12;
-    RESULT [1] = RESULT [0] + num12;
-    return;
-}
-
-def factorial ( int num )
-{
+def addNumbers(int a, int b) {
     int result;
-    int counter;
-    result = 1;
-    for (counter = 1; counter <= num; counter = counter + 1)
-    {
-        result = result * counter;
+    result = a + b;
+    return;
+}
+
+def subtractNumbers(int a, int b) {
+    int result;
+    result = a - b;
+    return;
+}
+
+def multiplyNumbers(int a, int b) {
+    int result;
+    result = a * b;
+    return;
+}
+
+def divideNumbers(int a, int b) {
+    int result;
+    result = a / b;
+    return;
+}
+
+def modulusNumbers(int a, int b) {
+    int result;
+    result = a % b;
+    return;
+}
+
+def compareNumbers(int a, int b) {
+    if (a > b) {
+        print "O primeiro número é maior.";
+    } else if (a < b) {
+        print "O segundo número é maior.";
+    } else {
+        print "Os números são iguais.";
     }
     return;
 }
 
-def fibonacci ( int n )
-{
-    int a;
-    int b;
-    int next;
+def loopExample() {
     int i;
-    a = 0;
-    b = 1;
-    for (i = 1; i <= n; i = i + 1)
-    {
-        next = a + b;
-        a = b;
-        b = next;
+    for (i = 0; i < 10; i = i + 1) {
+        print "Iteração do loop:";
+        print i;
     }
     return;
 }
 
-def isPrime ( int num )
-{
-    int i;
-    int count;
-    count = 0;
-    for (i = 1; i <= num; i = i + 1)
-    {
-        if (num % i == 0)
-        {
-            count = count + 1;
+def evenOddCheck() {
+    int num;
+    for (num = 0; num <= 10; num = num + 1) {
+        if (num % 2 == 0) {
+            print "Número par:";
+            print num;
+        } else {
+            print "Número ímpar:";
+            print num;
         }
     }
-    if (count == 2)
-    {
-        return;
-    }
-    else
-    {
-        return;
-    }
+    return;
 }
 
-def main ()
-{
-    int mainNum1;
-    int mainNum2;
-    int mainNum3;
-    int mainNum4;
-    int mainNum5;
-    int mainNum6;
-    int result;
-    mainNum1 = 4;
-    mainNum2 = 5;
-    mainNum3 = 6;
-    mainNum4 = 7;
-    mainNum5 = 8;
-    mainNum6 = 5;
-    result = multiplyAndAdd (mainNum1 , mainNum2 , mainNum3);
-    result = divideAndSubtract (mainNum1 , mainNum2 , mainNum3);
-    result = incrementAndMultiply (mainNum1 , mainNum2);
-    result = decrementAndDivide (mainNum1 , mainNum2);
-    result = modAndAdd (mainNum4 , mainNum5);
-    result = factorial (mainNum);
-    result = fibonacci (mainNum);
-    result = isPrime (mainNum);
+def printArray() {
+    int arr[5];
+    int i;
+    for (i = 0; i < 5; i = i + 1) {
+        arr[i] = i * 2;
+        print "Elemento do array:";
+        print arr[i];
+    }
     return;
 }
