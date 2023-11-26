@@ -6,6 +6,7 @@
 Feito por Pedro Balconi Mandelli \
 O projeto consiste em um analisador léxico e sintático para uma linguagem de programação simplificada. O analisador léxico identifica e classifica os tokens presentes no código fonte, o analisador sintático faz a análise da estrutura gramatical do programa, verificando se está de acordo com as regras definidas na gramática da linguagem.
 
+
 ### Execução do projeto
 1 - Execute o comando ```make run FILE=nomedoarquivo.lcc``` colocando o nome arquivo que você quer analisar, por exemplo: ```make run FILE=program1.lcc```. Se nenhum arquivo for determinado, o programa fará a analise do arquivo padrão: `entrada.lcc` \
 2 - Utilize o comando ```make clean``` para limpar o ambiente
