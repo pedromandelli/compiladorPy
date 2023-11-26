@@ -1,3 +1,5 @@
+"""O analisador sintático utiliza a tabela de reconhecimento sintático que foi construida com uma planilha e transformada em um dicionário"""
+
 SYNTAX_TABLE = {
     "PROGRAM": {
         "LBRACE": "STATEMENT",

@@ -1,3 +1,4 @@
+"""O analisador sintático utiliza a tabela de reconhecimento sintático que foi construida com uma planilha e transformada em um dicionário"""
 
 
 class SyntaxAnalyzer:
@@ -35,13 +36,12 @@ class SyntaxAnalyzer:
                         error_message(token_list, self.lexer.symbol_table, sentence_form, top, current_token.type)
                         return False
                 elif top == current_token.type:
-                    # Imprime o token reconhecido
+                    # Adiciona o tipo do token na forma sentencial
                     sentence_form = sentence_form + f' {current_token.value}'
                     token = self.lexer.get_next_token()
                     token_list.append(
                         f'Tipo: {current_token.type}, Valor: {current_token.value}, Linha: {self.lexer.current_line}')
                 elif top == "$" and token.type == "EOF":
-                    #
                     print('Lista de tokens')
                     for t in token_list:
                         print(t)
@@ -68,7 +68,7 @@ def error_message(tokens_list, symbol_table, sentence, top, input):
 
     print('\n')
     print('Forma sentencial:')
-    print(sentence)
+    print(f'PROGRAM -> {sentence}')
 
     print('\n')
     print(f"Símbolo não-terminal mais à esquerda: {top}")

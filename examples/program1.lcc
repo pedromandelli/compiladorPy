@@ -25,6 +25,31 @@ def displayOddNumbers(int limit) {
     }
 }
 
+def increaseLimit(int limit, int value) {
+  if (limit <= maximo) {
+    difference = maximo - limit;
+
+    if (difference > value) {
+        limit = limit + value;
+        limitIncreased = True;
+    }
+    else {
+        tooMuchLimit = True; return;
+    }
+  }
+  else {
+    tooMuchLimit = True; return;
+  }
+}
+
+def multiple(float number1, float number2){
+    print(number1 * number2);
+}
+
+def subtraction(float number1, float number2){
+    print(number1 - number2);
+}
+
 def factorial(int num) {
     if (num == 0) {
         return;
@@ -55,6 +80,8 @@ def main() {
     }
     return;
 
+    intDeclaration = 10;
+    intDeclarationWithSum = 10 + 10;
     intDeclarationWithSubtraction = (10 - 10);
     intDeclarationWithMultipleSummation = 10 + 10 + 10 - 10;
 
@@ -63,4 +90,14 @@ def main() {
 
     intDeclarationWithPrecedence = (5 + 10) + 5 / ((10 - 5) * 10);
 
+    if (3.0 + 0.14 < 2 * 2) {
+    yourMathIsWrong = False;
+    }
+
+    if (intDeclarationWithSum == intDeclarationWithMultipleSummation) {
+        return;
+    }
+    else {
+        break;
+    }
 }

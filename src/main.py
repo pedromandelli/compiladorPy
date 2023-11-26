@@ -24,6 +24,7 @@ def main():
     # Analisador léxico recebe a entrada
     lexer = Lexer(conteudo)
 
+    """O analisador sintático utiliza a tabela de reconhecimento sintático que foi construida com uma planilha e transformada em um dicionário"""
     # Cria o analisador sintático e inicia a análise
     analyzer = SyntaxAnalyzer(lexer, SYNTAX_TABLE)
     result = analyzer.analyze()
